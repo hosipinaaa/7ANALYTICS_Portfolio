@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velasco Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+html { 
+  scroll-behavior: smooth; 
+}
+
+.gif-background {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -2 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  pointer-events: none !important;
+  display: block !important;
+}
+
+body { 
+  background: #000; 
+  color: white;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  padding-top: 76px;
+  overflow-x: hidden;
+}
+
+body > * { 
+  position: relative; 
+  z-index: 1; 
+}
+
+.content-overlay { 
+  background: rgba(33, 15, 55, 0.85); 
+  min-height: 100vh; 
+  padding: 20px 0; 
+}
+
+.hero { 
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  padding: 0; 
+}
+
+.hero h1 { 
+  color: #eb99d1; 
+  font-size: 5rem; 
+  font-weight: bold; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
+}
+
+.hero .highlight { 
+  color: #eb99d1; 
+}
+
+.navbar { 
+  background: rgba(163, 84, 133, 0.697) !important; 
+  backdrop-filter: blur(10px); 
+  padding: 13px 0; 
+  border-bottom: 1px solid rgba(241, 153, 199, 0.3); 
+}
+
+.highlight-text { 
+  color: #eb99d1; 
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.8); 
+}
+
+.skill-icon { 
+  font-size: 4rem; 
+}
+
+.project-card { 
+  height: 100%; 
+  background: rgba(79, 28, 81, 0.95) !important; 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(233, 165, 241, 0.3); 
+  transition: all 0.3s ease; 
+}
+
+.project-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+}
+
+.project-card img { 
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.btn-warning { 
+  margin-top: 20px; 
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  border-radius: 5px; 
+}
+
+.btn-custom { 
+  background-color: #933975 !important; 
+  color: white !important; 
+  border: none; 
+  padding: 12px 25px; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  border-radius: 5px; 
+  margin-top: 20px; 
+  text-shadow: none; 
+}
+
+.btn-custom:hover { 
+  background-color: #ad488b !important; 
+  transform: translateY(-2px); 
+}
+
+.profile2-img { 
+  width: 400px; 
+  height: 400px; 
+  object-fit: cover; 
+  border-radius: 50%; 
+  border: 5px solid rgba(238, 116, 199, 0.5); 
+  box-shadow: 0 0 30px rgba(241, 165, 214, 0.3); 
+}
+
+.bg-about { 
+  background-color: #db6fa35f; 
+}
+
+.social-icons a { 
+  color: #E9A5F1; 
+  font-size: 20px; 
+  margin: 0 10px; 
+  transition: all 0.3s ease; 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); 
+}
+
+.social-icons a:hover { 
+  color: #560e41 !important; 
+  transform: scale(1.2); 
+}
+
+.btn-outline-dark:hover { 
+  background-color: #6a274f !important; 
+  color: white !important; 
+  margin-top: 2px; 
+}
+
+.project-card .card-body { 
+  background: transparent !important; 
+  color: white; 
+}
+
+.year-text { 
+  text-align: center; 
+  color: white; 
+  margin-top: 10px; 
+}
+
+.card-body { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100%; 
+}
+
+.project-card .btn-primary { 
+  background-color: #f173cf; 
+  border-color: #711f56; 
+}
+
+.project-card .btn-primary:hover { 
+  background-color: #782158; 
+  color: white; 
+}
+
+#contact button[type="submit"] { 
+  background-color: #E9A5F1; 
+  border-color: #4F1C51; 
+}
+
+#contact button[type="submit"]:hover { 
+  background-color: #4F1C51; 
+  color: white; 
+}
+
+footer { 
+  background: rgba(210, 111, 172, 0.622) !important; 
+  backdrop-filter: blur(10px); 
+  border-top: 1px solid rgba(234, 77, 182, 0.3); 
+}
+
+h1, h2, h3, h5 { 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
+}
+
+p { 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7); 
+}
+        .hobby-carousel-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .hobby-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        #interestCarousel .carousel-inner img {
+            max-height: 700px;
+            object-fit: cover;
+        }
+</style>
+</head>
+
+<img src="https://i.imgur.com/Tjh24cM.gif" class="gif-background" alt="Background" loading="eager" draggable="false">
+
+<body>
+<nav class="navbar navbar-expand-lg p-3 navbar-dark shadow-sm fw-bold fixed-top">
+  <div class="container">
+    <a class="navbar-brand fs-4" href="#home">Josephine Velasco</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <section id="home" class="hero text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1 class="display-4 fw-bold">Hello, I'm <span class="highlight-text">Josephine</span></h1>
+                    <p class="lead"><b>I am a third-year Computer Science student with a growing passion for technology, where I explore ideas, develop solutions, and transform concepts into meaningful digital experiences.</b></p>
+                    <div class="social-icons mb-4">
+                        <a href="https://www.facebook.com/hosipinaaa?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.instagram.com/velas_xo?igsh=eXQxZXowa2ZsN2Fw" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#projects" class="btn btn-custom btn-lg">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 text-white">
+        <div class="container">
+            <h1 class="text-4xl font-bold mb-4 bg-about text-white inline-block p-2 rounded w-full text-center"> 
+                <b>ABOUT ME</b></h1>
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center mb-5 mb-md-0">
+                    <img src="https://i.imgur.com/2GpjlvB.jpeg" alt="Velasco's Profile Picture" class="img-fluid profile2-img">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="highlight-text">Who Am I?</h3>
+                    <p>Hi! I'm <b>Josephine M. Velasco</b>, currently a third-year Computer Science student at City College of Angeles. My journey continues as I explore different areas of technology and deepen my understanding of how systems work. The challenges I encounter encourage me to learn more and continuously improve my abilities. I enjoy creating projects and aim to gradually expand my knowledge as I grow in the field of technology.</p>
+
+                    <h3 class="highlight-text mt-4">Education</h3>
+                    <div>
+                        <p><span class="me-2">🎓</span><b>College:</b> Currently Studying at City College of Angeles</p>
+                        <p><span class="me-2">🎓</span><b>Senior High School:</b> System Plus College Foundation</p>
+                        <p><span class="me-2">🎓</span><b>Junior High School:</b> Angeles City National Trade School</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="row align-items-center g-5">
+                        <div class="col-md-6">
+                            <div class="hobby-content">
+                                <h3 class="highlight-text mb-4">Hobby</h3>
+                                <p class="lead">
+                                    Art, particularly sketching, remains an important part of my personal life. It serves as a creative outlet that allows me to relax and reflect beyond academic responsibilities. Through drawing, I am able to express ideas and emotions in a different form, making it both a meaningful and fulfilling activity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 text-center">
+                            <div class="hobby-carousel-container">
+                                <div id="interestCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#interestCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#interestCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#interestCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#interestCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    </div>
+
+                                    <div class="carousel-inner rounded-4 shadow">
+                                        <div class="carousel-item active">
+                                            <img src="https://i.imgur.com/UxvqH4S.jpeg" class="d-block w-100" style="max-height: 700px; object-fit: cover;" alt="ART1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://i.imgur.com/LMZg7tJ.jpeg" class="d-block w-100" style="max-height: 700px; object-fit: cover;" alt="ART2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://i.imgur.com/W1qbNYh.jpeg" class="d-block w-100" style="max-height: 700px; object-fit: cover;" alt="ART3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://i.imgur.com/UnJVLhE.jpeg" class="d-block w-100" style="max-height: 700px; object-fit: cover;" alt="ART4">
+                                        </div>
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#interestCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#interestCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5 text-white">
+        <div class="container">
+            <h1 class="text-4xl font-bold mb-4 bg-about text-white inline-block p-2 rounded w-full text-center"> 
+            <b>PROJECTS</b></h1>
+            <p class="text-center lead mb-5"><b>MIDTERM TASKS</b></p>
+            <div class="row g-4 justify-content-center">
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-sm border-0 pb-4 project-card h-100">
+                        <img src="https://i.imgur.com/v0a1aJz.png" class="card-img-top" alt="Task 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Midterm Task 1</h5>
+                            <a href="https://drive.google.com/file/d/18XfYX8JtexXWBUEKx9acs1pYo-B4iW01/view?usp=sharing" target="_blank" class="btn btn-primary">View file</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Project 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-sm border-0 pb-4 project-card h-100">
+                        <img src="https://i.imgur.com/YaDr7tr.png" class="card-img-top" alt="Task 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Midterm Task 2</h5>
+                            <a href="https://drive.google.com/file/d/1G_S5nByzGmTa77962nXgnCIwkKye27Kx/view?usp=sharing" target="_blank" class="btn btn-primary">View file</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Project 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-sm border-0 pb-4 project-card h-100">
+                        <img src="https://i.imgur.com/iJFPp38.png" class="card-img-top" alt="Task 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Midterm Task 3</h5>
+                            <a href="https://drive.google.com/file/d/10oZRPdSw7vM_bVgZOI6YIm46enUhyNhX/view?usp=sharing" target="_blank" class="btn btn-primary">View file</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 text-center mb-4">
+                    <h1 class="text-4xl font-bold mb-4 bg-about text-white inline-block p-2 rounded w-full text-center"> 
+                    <b>CONTACT</b></h1>
+                    <p class="lead"><b>"Have a project or idea? Let's make it happen—reach out!"</b></p>
+                </div>
+            </div>
+           
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <form id="contactForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your email" required>
+                            </div>
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Hey there, love the website! I'd like to chat about some recommendation or projects!" required></textarea>
+                        </div>
+                       
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-custom btn-lg px-5">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-white text-center">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="https://www.facebook.com/hosipinaaa?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/velas_xo?igsh=eXQxZXowa2ZsN2Fw" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+            <p class="mb-0">&copy; <span id="year"></span> Josephine Velasco. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+       
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("All fields are required.");
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+            alert("Message sent successfully!");
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+</body>
+</html>
